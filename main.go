@@ -8,6 +8,6 @@ import (
 
 func main() {
 	db.GetConn()
-	http.HandleFunc("/", routings.Root)
+	routings.Route()
 	http.ListenAndServe(":3000", nil)
 }

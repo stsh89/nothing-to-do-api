@@ -1,7 +1,7 @@
 package queries
 
 import (
-	"../db"
+	"../../db"
 	"../models"
 )
 
