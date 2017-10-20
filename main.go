@@ -1,13 +1,11 @@
 package main
 
 import (
-	"./models"
-	"fmt"
+	"./routings"
+	"net/http"
 )
 
 func main() {
-	user := models.NewUser("Stan")
-	fmt.Println(user.GetName())
-	user.SetName("Roland")
-	fmt.Println(user.GetName())
+	http.HandleFunc("/", routings.Root)
+	http.ListenAndServe(":3000", nil)
 }
