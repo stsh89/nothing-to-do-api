@@ -1,13 +1,13 @@
 package main
 
 import (
+	"./config"
 	"./db"
-	"./routings"
 	"net/http"
 )
 
 func main() {
 	db.GetConn()
-	routings.Route()
+	config.Routes()
 	http.ListenAndServe(":3000", nil)
 }

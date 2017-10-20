@@ -1,9 +1,9 @@
-package routings
+package config
 
 import (
 	"../app/controllers"
 )
 
-func Route() {
+func Routes() {
 	controllers.AllUsers()
 }
