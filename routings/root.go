@@ -1,13 +1,14 @@
 package routings
 
 import (
-	"../models"
+	"../queries"
+	"encoding/json"
 	"net/http"
 )
 
 func Root(w http.ResponseWriter, r *http.Request) {
-	user := models.NewUser("Stan")
-	b, _ := user.ToJSON()
+	users := queries.GetAllUsers()
+	b, _ := json.Marshal(users)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(b)
 }

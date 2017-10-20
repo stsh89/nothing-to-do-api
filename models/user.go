@@ -16,7 +16,7 @@ func (u *User) SetName(name string) {
 	u.name = name
 }
 
-func (u *User) ToJSON() ([]byte, error) {
+func (u *User) MarshalJSON() ([]byte, error) {
 	return json.Marshal(map[string]interface{}{
 		"name": u.name,
 	})
