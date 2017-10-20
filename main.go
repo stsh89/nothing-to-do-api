@@ -1,13 +1,13 @@
 package main
 
 import (
-	"./database"
+	"./db"
 	"./routings"
 	"net/http"
 )
 
 func main() {
-	database.GetConn()
+	db.GetConn()
 	http.HandleFunc("/", routings.Root)
 	http.ListenAndServe(":3000", nil)
 }

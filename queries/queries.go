@@ -1,7 +1,7 @@
 package queries
 
 import (
-	"../database"
+	"../db"
 	"../models"
 )
 
@@ -10,7 +10,7 @@ func GetAllUsers() []models.User {
 	var user models.User
 
 	users := []models.User{}
-	rows, _ := database.Conn.Query("select name from users")
+	rows, _ := db.Conn.Query("select name from users")
 	defer rows.Close()
 
 	for rows.Next() {
